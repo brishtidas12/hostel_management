@@ -3,41 +3,41 @@ Overview
 This project designs and implements a relational database for a hostel management system. It models primary entities such as Hostels, Rooms, Students, Wardens, Fee Payments, and Maintenance Requests.
 
 Database Design:
-Hostel (Strong Entity)
+1. Hostel (Strong Entity)
 Attributes: Hostel_ID (Primary Key), Hostel_Name, Capacity
 
-Room (Strong Entity)
+2. Room (Strong Entity)
 Attributes: Room_Number (Primary Key), Room_Type, Capacity
 
-Student (Strong Entity)
+3. Student (Strong Entity)
 Attributes: Student_ID (Primary Key), Name, Contact_Number, Room_Number (Foreign Key)
 
-Warden (Strong Entity)
+4. Warden (Strong Entity)
 Attributes: Warden_ID (Primary Key), Name, Contact_Number
 
-Fee_Payment (Weak Entity)
+5. Fee_Payment (Weak Entity)
 Attributes: Payment_ID (Primary Key), Amount, Payment_Date
 
-Maintenance_Request (Weak Entity)
+5. Maintenance_Request (Weak Entity)
 Attributes: Request_ID (Primary Key), Student_ID (Foreign Key), Room_Number (Foreign Key), Request_Date
 
 The design uses primary keys for unique identification and foreign keys to maintain references between related tables.
 
 Relationships:
-Student assigned to Room
+1. Student assigned to Room
 
-Maintenance Request linked to Student and Room
+2. Maintenance Request linked to Student and Room
 
 Sample Queries:
-Retrieve all students with their assigned room details
+1. Retrieve all students with their assigned room details
 
-List all hostels with capacity information
+2. List all hostels with capacity information
 
-Show fee payment history
+3. Show fee payment history
 
-Get maintenance requests with student and room details
+4. Get maintenance requests with student and room details
 
-Fetch all wardens and their contact information
+5. Fetch all wardens and their contact information
 
 Technology Used:
 MySQL Command Line Client
