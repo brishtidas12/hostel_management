@@ -347,3 +347,54 @@ mysql> SELECT warden_id, name, contact_number FROM Warden;
 |        20 | Mrs. Rekha Joshi    | 9600223344     |
 +-----------+---------------------+----------------+
 20 rows in set (0.00 sec)
+mysql> SELECT s.student_id, s.name, s.contact_number, r.room_number, r.room_type
+    -> FROM Student s
+    -> LEFT JOIN Room r ON s.room_number = r.room_number
+    -> LIMIT 1;
++------------+------------+----------------+-------------+-----------+
+| student_id | name       | contact_number | room_number | room_type |
++------------+------------+----------------+-------------+-----------+
+|          1 | Ravi Kumar | 8800112233     |           1 | Single    |
++------------+------------+----------------+-------------+-----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT hostel_id, hostel_name, capacity FROM Hostel
+    -> LIMIT 1;
++-----------+-----------------+----------+
+| hostel_id | hostel_name     | capacity |
++-----------+-----------------+----------+
+|         1 | Magnolia Hostel |      100 |
++-----------+-----------------+----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT payment_id, amount, payment_date FROM Fee_Payment
+    -> LIMIT 1;
++------------+----------+--------------+
+| payment_id | amount   | payment_date |
++------------+----------+--------------+
+|          1 | 12000.00 | 2025-09-01   |
++------------+----------+--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT mr.request_id, mr.request_date, s.name AS student_name, r.room_number
+    -> FROM Maintenance_Request mr
+    -> JOIN Student s ON mr.student_id = s.student_id
+    -> JOIN Room r ON mr.room_number = r.room_number
+    -> LIMIT 1;
++------------+--------------+--------------+-------------+
+| request_id | request_date | student_name | room_number |
++------------+--------------+--------------+-------------+
+|          1 | 2025-09-01   | Ravi Kumar   |           1 |
++------------+--------------+--------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT warden_id, name, contact_number FROM Warden
+    -> LIMIT 1;
++-----------+------------------+----------------+
+| warden_id | name             | contact_number |
++-----------+------------------+----------------+
+|         1 | Mr. Rajesh Singh | 7700112233     |
++-----------+------------------+----------------+
+1 row in set (0.00 sec)
+
+mysql>
